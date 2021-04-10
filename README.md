@@ -43,7 +43,7 @@ Don't miss out on any of the important features supplied by AMII!
 # Features
 
 This isn't a comprehensive list of all the current functionality that AMII has to offer.
-Just the features that cannot be provided by the generic platform agnostic plugin.
+Just the features that cannot be provided by the generic, platform agnostic plugin.
 
 To see a full list of features, [please see AMII's documentation](https://github.com/ani-memes/AMII#documentation).
 

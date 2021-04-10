@@ -2,7 +2,7 @@ package icons
 
 import com.intellij.openapi.util.IconLoader
 
-object AMIIIcons {
+object AMIIRiderIcons {
   @JvmField
   val PLUGIN_ICON = IconLoader.getIcon("/icons/plugin-tool-window.svg", javaClass)
 

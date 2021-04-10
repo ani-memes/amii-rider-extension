@@ -3,8 +3,9 @@ package io.unthrottled.amii.rider.listeners
 import com.intellij.ide.plugins.DynamicPluginListener
 import com.intellij.ide.plugins.IdeaPluginDescriptor
 import com.intellij.openapi.application.ApplicationManager
-import io.unthrottled.amii.config.Constants.PLUGIN_ID
-import io.unthrottled.amii.tools.Logging
+import io.unthrottled.amii.rider.PluginMaster
+import io.unthrottled.amii.rider.config.Constants.PLUGIN_ID
+import io.unthrottled.amii.rider.tools.Logging
 
 class IDEPluginInstallListener : DynamicPluginListener, Logging {
 
@@ -23,7 +24,7 @@ class IDEPluginInstallListener : DynamicPluginListener, Logging {
   override fun pluginLoaded(pluginDescriptor: IdeaPluginDescriptor) {
     if (pluginDescriptor.pluginId.idString == PLUGIN_ID) {
       ApplicationManager.getApplication().invokeLater {
-        io.unthrottled.amii.rider.PluginMaster.instance.onUpdate()
+        PluginMaster.instance.onUpdate()
       }
     }
   }

@@ -9,7 +9,7 @@
 [![Downloads](https://img.shields.io/jetbrains/plugin/d/15865-amii.svg)](https://plugins.jetbrains.com/plugin/15865-amii)
 
 <!-- Plugin description -->
-Enables full functionality of the "Anime Meme" plugin on the Rider Platform.
+Enables full functionality of the [Anime Meme](https://github.com/ani-memes/AMII) plugin on the Rider Platform.
 Don't miss out on any of the important features supplied by AMII!
 <!-- Plugin description end -->
 
@@ -30,9 +30,10 @@ Don't miss out on any of the important features supplied by AMII!
 # Documentation
 
 - [Features](#features)
-  - [Interactions](#interactions)
-    - [Test Results](#test-results)
-    - [Build Tasks](#build-tasks)
+  - [Test Result Interactions](#test-result-interactions)
+
+[comment]: <> (  - [Build Task Interations]&#40;#build-tasks&#41;)
+
 - [Extras](#extras)
   - [The Doki Theme](#the-doki-theme)
   - [Waifu Motivator](#the-doki-theme)
@@ -41,24 +42,14 @@ Don't miss out on any of the important features supplied by AMII!
 ---
 # Features
 
-Here is a comprehensive list of all the current functionality that AMII has to offer.
+This isn't a comprehensive list of all the current functionality that AMII has to offer.
+Just the features that cannot be provided by the generic platform agnostic plugin.
 
-## Interactions
+To see a full list of features, [please see AMII's documentation](https://github.com/ani-memes/AMII#documentation).
 
-This is the proverbial meat and potatoes of the plugin.
-You will have choicest of anime memes delivered right to your IDE as you program to your heart's content.
+Without this extension you'll be missing out on:
 
-**MIKU**
-
-As mention previously, our Meme Inference Knowledge Unit (or MIKU for short)
-has the ability interact with you as you build code.
-MIKU's preferred method of communication is Anime Memes.
-
-If you are wondering what things you can do to cause MIKU give you memes, well just look below!
-
-_All events are configurable to be enabled/disabled, see [configuration](#configuration) for more details_
-
-### Test Results
+### Test Result Interactions
 
 Tests pass and tests fail, that's just a fact of life.
 You know what's better than red x's and green check marks?
@@ -71,20 +62,23 @@ You know what's better than red x's and green check marks?
 **Test Failures**
 ![Test Failure](./readmeAssets/test_fail.gif)
 
-### Build Tasks
+[comment]: <> (### Build Tasks Interactions)
 
-This is an IDE, right? Well, that means you can build code right from your editor.
-It just so happens, that builds happen to fail from time to time.
-You did put in that semicolon, right?
+[comment]: <> (This is an IDE, right? Well, that means you can build code right from your editor.)
 
-![Build Failures](./readmeAssets/build.gif)
+[comment]: <> (It just so happens, that builds happen to fail from time to time.)
 
-Well MIKU knows when your builds fail too, so expect a response as well.
+[comment]: <> (You did put in that semicolon, right?)
 
-**Build Pass**
+[comment]: <> (![Build Failures]&#40;./readmeAssets/build.gif&#41;)
 
-When you get your marbles all back,
-the next time you build successfully (after a build failure) MIKU will give you a pat on the back.
+[comment]: <> (Well MIKU knows when your builds fail too, so expect a response as well.)
+
+[comment]: <> (**Build Pass**)
+
+[comment]: <> (When you get your marbles all back,)
+
+[comment]: <> (the next time you build successfully &#40;after a build failure&#41; MIKU will give you a pat on the back.)
 
 ---
 

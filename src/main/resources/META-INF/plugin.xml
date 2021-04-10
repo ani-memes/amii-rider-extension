@@ -1,0 +1,97 @@
+<idea-plugin>
+  <id>io.unthrottled.amii.rider</id>
+  <name>Anime Memes</name>
+  <vendor>Unthrottled</vendor>
+
+  <!-- Product and plugin compatibility requirements -->
+  <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.intellij.modules.rider</depends>
+  <depends>io.unthrottled.amii.rider</depends>
+
+
+  <extensions defaultExtensionNs="com.intellij">
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.config.Config"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.services.CharacterGatekeeper"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.PluginMaster"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.assets.CacheWarmingService"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.assets.VisualEntityService"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.assets.VisualEntityRepository"/>
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.assets.VisualAssetProbabilityService"/>
+    <applicationConfigurable id="io.unthrottled.amii.rider.config.ui.PluginSettingsUI"
+                             instance="io.unthrottled.amii.rider.config.ui.PluginSettingsUI"
+    />
+    <consoleFilterProvider implementation="io.unthrottled.amii.rider.listeners.ConsoleListener"/>
+    <errorHandler implementation="io.unthrottled.amii.rider.integrations.ErrorReporter"/>
+    <projectService serviceImplementation="io.unthrottled.amii.rider.services.ConsoleFilterFactory"/>
+    <projectService serviceImplementation="io.unthrottled.amii.rider.memes.MemeService"/>
+    <statusBarWidgetFactory implementation="io.unthrottled.amii.rider.personality.MoodStatusBarProvider"/>
+  </extensions>
+
+  <project-components>
+    <component><implementation-class>io.unthrottled.amii.rider.listeners.RiderListener</implementation-class></component>
+  </project-components>
+
+  <applicationListeners>
+    <listener class="io.unthrottled.amii.rider.listeners.ProjectListener"
+              topic="com.intellij.openapi.project.ProjectManagerListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.IDEPluginInstallListener"
+              topic="com.intellij.ide.plugins.DynamicPluginListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.OrphanReaper"
+              topic="io.unthrottled.amii.rider.assets.APIAssetListener"/>
+  </applicationListeners>
+  <projectListeners>
+    <listener class="io.unthrottled.amii.rider.core.MIKU"
+              topic="io.unthrottled.amii.rider.events.UserEventListener"/>
+    <listener class="io.unthrottled.amii.rider.core.personality.emotions.CoolDownCore"
+              topic="io.unthrottled.amii.rider.core.personality.emotions.MoodListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.TestEventListener"
+              topic="com.intellij.execution.testframework.sm.runner.SMTRunnerEventsListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.ExitCodeListener"
+              topic="com.intellij.execution.ExecutionListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.ProcessExecutionListener"
+              topic="com.intellij.execution.ExecutionListener"/>
+    <listener class="io.unthrottled.amii.rider.listeners.TaskListener"
+              topic="com.intellij.task.ProjectTaskListener"/>
+  </projectListeners>
+  <actions>
+    <group id="AMIIActions" text="AMII Options" popup="true" icon="AMIIIcons.PLUGIN_ICON">
+      <add-to-group group-id="ToolsMenu" anchor="last"/>
+      <action id="meme.machine" class="io.unthrottled.amii.rider.actions.MemeOnDemand"
+              text="Show Random Ani-Meme"
+              description="Displays anime random Meme">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt R"/>
+      </action>
+      <action id="amii.asset-sync"
+              class="io.unthrottled.amii.rider.actions.AssetSyncAction"
+              icon="AllIcons.Actions.Refresh"
+              text="Synchronize Assets"
+              description="Updates the list of all assets to be used from the central remote repository.">
+      </action>
+      <action id="amii.relax"
+              class="io.unthrottled.amii.rider.actions.RelaxAction"
+              text="Relax MIKU"
+              icon="AMIIIcons.HEART"
+              description="Action calms down MIKU">
+        <keyboard-shortcut keymap="$default" first-keystroke="ctrl alt R"/>
+      </action>
+      <action id="amii.settings" class="io.unthrottled.amii.rider.actions.AMIISettingsAction"
+              text="Show AMII's Settings"
+              icon="AllIcons.General.GearPlain"
+              description="Displays AMII's Settings">
+        <keyboard-shortcut keymap="$default" first-keystroke="alt S"/>
+      </action>
+      <action id="io.unthrottled.amii.rider.actions.ShowUpdateNotification"
+              class="io.unthrottled.amii.rider.actions.ShowUpdateNotification"
+              text="Show Update Notification"
+              description="Shows the current update notification window."
+              icon="AMIIIcons.PLUGIN_ICON">
+      </action>
+    </group>
+    <action id="io.unthrottled.amii.rider.actions.MinimalModeAction" class="io.unthrottled.amii.rider.actions.MinimalModeAction"
+            text="Toggle Minimal Mode" description="Enables/Disables AMII&#39;s minimal mode">
+      <add-to-group group-id="AMIIActions" anchor="last"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="shift ctrl alt M"/>
+    </action>
+  </actions>
+</idea-plugin>

@@ -1,5 +1,5 @@
 <div align="center">
-    <img alt="Plugin Logo" style="max-height: 256px" src="https://raw.githubusercontent.com/ani-memes/amii-rider-extension/main/readmeAssets/plugin_logo.png" ></img>
+    <img alt="Plugin Logo" height="256px" src="https://raw.githubusercontent.com/ani-memes/amii-rider-extension/main/readmeAssets/plugin_logo.png" ></img>
 </div>
 
 # AMII - Rider Extension

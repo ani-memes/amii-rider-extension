@@ -7,7 +7,6 @@ import com.intellij.openapi.project.ProjectManager
 import com.intellij.openapi.project.ProjectManagerListener
 import io.unthrottled.amii.rider.onboarding.UserOnBoarding
 import io.unthrottled.amii.rider.platform.LifeCycleManager
-import io.unthrottled.amii.rider.services.WelcomeService
 import io.unthrottled.amii.rider.tools.Logging
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.ConcurrentMap
@@ -29,7 +28,6 @@ class PluginMaster : ProjectManagerListener, Disposable, Logging {
     UserOnBoarding.attemptToPerformNewUpdateActions(project)
     val projectId = project.locationHash
     if (projectListeners.containsKey(projectId).not()) {
-      WelcomeService.greetUser(project)
       projectListeners[projectId] =
         ProjectListeners(project)
     }

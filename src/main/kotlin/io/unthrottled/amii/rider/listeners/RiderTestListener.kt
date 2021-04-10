@@ -13,7 +13,7 @@ import io.unthrottled.amii.tools.PluginMessageBundle
 import io.unthrottled.amii.tools.toOptional
 import java.util.concurrent.ConcurrentHashMap
 
-class RiderListener(
+class RiderTestListener(
   project: Project
 ) : ProtocolSubscribedProjectComponent(project) {
 

@@ -2,9 +2,9 @@ package io.unthrottled.amii.rider.integrations
 
 import com.intellij.openapi.diagnostic.Logger
 import com.intellij.util.io.HttpRequests
-import io.unthrottled.amii.integrations.RestTools.performRequest
-import io.unthrottled.amii.tools.readAllTheBytes
-import io.unthrottled.amii.tools.toOptional
+import io.unthrottled.amii.rider.integrations.RestTools.performRequest
+import io.unthrottled.amii.rider.tools.readAllTheBytes
+import io.unthrottled.amii.rider.tools.toOptional
 import java.io.InputStream
 import java.util.Optional
 

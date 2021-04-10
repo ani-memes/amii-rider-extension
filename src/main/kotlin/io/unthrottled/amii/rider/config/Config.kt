@@ -8,7 +8,7 @@ import com.intellij.util.xmlb.XmlSerializerUtil.copyBean
 import com.intellij.util.xmlb.XmlSerializerUtil.createCopy
 
 @State(
-  name = "Plugin-Config",
+  name = "Rider-Config",
   storages = [Storage("AMII.xml")]
 )
 class Config : PersistentStateComponent<Config>, Cloneable {

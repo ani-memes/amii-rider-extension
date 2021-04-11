@@ -12,11 +12,16 @@
 
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceImplementation="io.unthrottled.amii.rider.config.Config"/>
-    <applicationService serviceImplementation="io.unthrottled.amii.rider.PluginMaster" />
+    <applicationService serviceImplementation="io.unthrottled.amii.rider.PluginMaster"/>
   </extensions>
 
   <project-components>
-    <component><implementation-class>io.unthrottled.amii.rider.listeners.RiderTestListener</implementation-class></component>
+    <component>
+      <implementation-class>io.unthrottled.amii.rider.listeners.RiderTestListener</implementation-class>
+    </component>
+    <component>
+      <implementation-class>io.unthrottled.amii.rider.listeners.RiderTaskListener</implementation-class>
+    </component>
   </project-components>
 
   <applicationListeners>

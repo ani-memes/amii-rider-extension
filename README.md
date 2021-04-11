@@ -62,23 +62,23 @@ You know what's better than red x's and green check marks?
 **Test Failures**
 ![Test Failure](./readmeAssets/test_fail.gif)
 
-[comment]: <> (### Build Tasks Interactions)
+### Build Tasks Interactions
 
-[comment]: <> (This is an IDE, right? Well, that means you can build code right from your editor.)
+This is an IDE, right? Well, that means you can build code right from your editor.
 
-[comment]: <> (It just so happens, that builds happen to fail from time to time.)
+It just so happens, that builds happen to fail from time to time.
 
-[comment]: <> (You did put in that semicolon, right?)
+You did put in that semicolon, right?
 
-[comment]: <> (![Build Failures]&#40;./readmeAssets/build.gif&#41;)
+![Build Failures](./readmeAssets/build.gif)
 
-[comment]: <> (Well MIKU knows when your builds fail too, so expect a response as well.)
+Well MIKU knows when your builds fail too, so expect a response as well.
 
-[comment]: <> (**Build Pass**)
+**Build Pass**
 
-[comment]: <> (When you get your marbles all back,)
+When you get your marbles all back,
 
-[comment]: <> (the next time you build successfully &#40;after a build failure&#41; MIKU will give you a pat on the back.)
+the next time you build successfully (after a build failure) MIKU will give you a pat on the back.
 
 ---
 

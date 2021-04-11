@@ -32,8 +32,10 @@ class RiderTestListener(
         } else if (runningTests[sessionKey] == true) {
           if (sessionState.completedCount == sessionState.totalCount) {
             when (sessionState.status) {
-              RdUnitTestStatus.Success -> PluginMessageBundle.message("user.event.test.pass.name") to UserEventCategory.POSITIVE
-              RdUnitTestStatus.Failed -> PluginMessageBundle.message("user.event.test.fail.name") to UserEventCategory.NEGATIVE
+              RdUnitTestStatus.Success -> PluginMessageBundle.message("user.event.test.pass.name") to
+                UserEventCategory.POSITIVE
+              RdUnitTestStatus.Failed -> PluginMessageBundle.message("user.event.test.fail.name") to
+                UserEventCategory.NEGATIVE
               else -> null
             }.toOptional()
               .ifPresent { messageToCategory ->
@@ -52,9 +54,7 @@ class RiderTestListener(
               }
           }
         }
-
       }
     }
   }
-
 }

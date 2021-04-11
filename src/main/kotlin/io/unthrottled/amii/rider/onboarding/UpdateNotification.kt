@@ -23,7 +23,8 @@ private fun buildUpdateMessage(updateAsset: String): String =
   """
       What's New?<br>
       <ul>
-        <li>Added Rider Unit Test Feature Support!!</li>
+        <li>Added Rider Unit Test Feature Support.</li>
+        <li>Added Rider Build Task Feature Support.</li>
       </ul>
       <br>See the <a href="https://github.com/ani-memes/amii-rider-extension#documentation">documentation</a> for features, usages, and configurations.
       <br>The <a href="https://github.com/ani-memes/amii-rider-extension/blob/master/CHANGELOG.md">changelog</a> is available for more details.

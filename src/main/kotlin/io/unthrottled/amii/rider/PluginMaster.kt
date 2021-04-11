@@ -33,7 +33,6 @@ class PluginMaster : ProjectManagerListener, Disposable, Logging {
     }
   }
 
-
   override fun projectClosed(project: Project) {
     projectListeners[project.locationHash]?.dispose()
     projectListeners.remove(project.locationHash)
@@ -53,7 +52,6 @@ class PluginMaster : ProjectManagerListener, Disposable, Logging {
 internal data class ProjectListeners(
   private val project: Project,
 ) : Disposable {
-
 
   override fun dispose() {
   }

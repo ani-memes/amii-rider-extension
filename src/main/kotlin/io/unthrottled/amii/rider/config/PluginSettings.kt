@@ -4,8 +4,7 @@ import java.net.URI
 
 data class ConfigSettingsModel(
   val foo: String = "aoeu",
-) {
-}
+)
 
 object PluginSettings {
   const val PLUGIN_SETTINGS_DISPLAY_NAME = "AMII Settings"
@@ -15,6 +14,5 @@ object PluginSettings {
   val ISSUES_URI = URI("$REPOSITORY/issues")
 
   @JvmStatic
-  fun getInitialConfigSettingsModel() = ConfigSettingsModel(
-  )
+  fun getInitialConfigSettingsModel() = ConfigSettingsModel()
 }

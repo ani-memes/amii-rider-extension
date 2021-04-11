@@ -2,6 +2,12 @@
 
 # AMII Rider Extensions Changelog
 
+## [0.2.0]
+
+## Fixed
+
+- Build Task reactions not showing up in Rider.
+
 ## [0.1.0]
 
 ## Fixed

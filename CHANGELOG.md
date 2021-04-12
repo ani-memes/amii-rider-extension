@@ -2,6 +2,12 @@
 
 # AMII Rider Extensions Changelog
 
+## [0.2.1]
+
+## Changed
+
+- Plugin Logo to not use JetBrains' brand directly. Conforms [to the guideline](https://plugins.jetbrains.com/docs/intellij/plugin-icon-file.html#plugin-logo-colors).
+
 ## [0.2.0]
 
 ## Fixed

@@ -4,9 +4,9 @@
 
 # AMII - Rider Extension
 
-![Build](https://github.com/Unthrottled/AMII/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/15865-amii.svg)](https://plugins.jetbrains.com/plugin/15865-amii)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/15865-amii.svg)](https://plugins.jetbrains.com/plugin/15865-amii)
+![Build](https://github.com/ani-memes/amii-rider-extension/workflows/Build/badge.svg)
+[![Version](https://img.shields.io/jetbrains/plugin/v/16518-anime-memes--rider-extension.svg)](https://plugins.jetbrains.com/plugin/16518-anime-memes--rider-extension)
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/16518-anime-memes--rider-extension.svg)](https://plugins.jetbrains.com/plugin/16518-anime-memes--rider-extension)
 
 <!-- Plugin description -->
 Enables full functionality of the [Anime Meme](https://github.com/ani-memes/AMII) plugin on the Rider Platform.

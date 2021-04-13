@@ -3,6 +3,8 @@
   <name>Anime Memes - Rider Extension</name>
   <vendor>Unthrottled</vendor>
 
+  <idea-version since-build="203.5981.141"/>
+
   <!-- Product and plugin compatibility requirements -->
   <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
   <depends>com.intellij.modules.platform</depends>

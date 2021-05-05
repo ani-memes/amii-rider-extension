@@ -2,6 +2,12 @@
 
 # AMII Rider Extensions Changelog
 
+## [0.2.2]
+
+## Fixed
+
+- MIKU not reacting to test the first time you ever run them.
+
 ## [0.2.1]
 
 ## Changed

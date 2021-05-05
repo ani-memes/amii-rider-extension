@@ -27,7 +27,14 @@ class RiderTestListener(
       runningTests[sessionKey] = false
       val state = it.newValueOpt?.state
       state?.advise(projectComponentLifetime) { sessionState ->
-        if (sessionState.message == "Running" && runningTests[sessionKey] != true) {
+        val sessionStateMessage = sessionState.message
+        if ((
+          "Running".equals(sessionStateMessage, ignoreCase = true) ||
+            // when the test UI window is first open
+            // running is not seen, but finishing is.
+            "Finishing".equals(sessionStateMessage, ignoreCase = true)
+          ) && runningTests[sessionKey] != true
+        ) {
           runningTests[sessionKey] = true
         } else if (runningTests[sessionKey] == true) {
           if (sessionState.completedCount == sessionState.totalCount) {

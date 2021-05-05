@@ -1,4 +1,4 @@
-### Fixed
-- Unit-Test reactions not showing up in Rider.
-- Build Task reactions not showing up in Rider.
+## Fixed
+
+- MIKU not reacting to test the first time you ever run them.
 

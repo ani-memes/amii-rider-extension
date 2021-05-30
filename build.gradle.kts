@@ -1,8 +1,9 @@
 import io.gitlab.arturbosch.detekt.Detekt
-import org.jetbrains.changelog.closure
 import org.jetbrains.changelog.markdownToHTML
 import org.jetbrains.intellij.tasks.RunPluginVerifierTask.FailureLevel
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+fun properties(key: String) = project.findProperty(key).toString()
 
 plugins {
   // Kotlin support
@@ -39,7 +40,7 @@ version = pluginVersion
 // Configure project's dependencies
 repositories {
   mavenCentral()
-  jcenter()
+  mavenLocal()
 }
 dependencies {
   detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.17.1")
@@ -61,15 +62,14 @@ configurations {
 // Configure gradle-intellij-plugin plugin.
 // Read more: https://github.com/JetBrains/gradle-intellij-plugin
 intellij {
-  pluginName = pluginName_
-  version = platformVersion
-  type = platformType
-  downloadSources = platformDownloadSources.toBoolean()
-  updateSinceUntilBuild = true
-  alternativeIdePath = idePath
+  pluginName.set(pluginName_)
+  version.set(platformVersion)
+  type.set(platformType)
+  downloadSources.set(platformDownloadSources.toBoolean())
+  updateSinceUntilBuild.set(true)
 
   // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
-  setPlugins("io.unthrottled.amii:0.8.2")
+  plugins.set(listOf("io.unthrottled.amii:0.10.2"))
 }
 
 // Configure detekt plugin.
@@ -100,43 +100,52 @@ tasks {
     jvmTarget = "1.8"
   }
 
+  runIde {
+    val idePath = properties("idePath")
+    if (idePath.isNotEmpty()) {
+      ideDir.set(file(idePath))
+    }
+  }
+
   patchPluginXml {
-    version(pluginVersion)
-    sinceBuild(pluginSinceBuild)
-    untilBuild(pluginUntilBuild)
+    version.set(pluginVersion)
+    sinceBuild.set(pluginSinceBuild)
+    untilBuild.set(pluginUntilBuild)
 
     // Extract the <!-- Plugin description --> section from README.md and provide for the plugin's manifest
-    pluginDescription(
-      closure {
-        File("${project.projectDir}/README.md").readText().lines().run {
-          val start = "<!-- Plugin description -->"
-          val end = "<!-- Plugin description end -->"
+    pluginDescription.set(
+      File("${project.projectDir}/README.md").readText().lines().run {
+        val start = "<!-- Plugin description -->"
+        val end = "<!-- Plugin description end -->"
 
-          if (!containsAll(listOf(start, end))) {
-            throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
-          }
-          subList(indexOf(start) + 1, indexOf(end))
-        }.joinToString("\n").run { markdownToHTML(this) }
-      }
+        if (!containsAll(listOf(start, end))) {
+          throw GradleException("Plugin description section not found in README.md:\n$start ... $end")
+        }
+        subList(indexOf(start) + 1, indexOf(end))
+      }.joinToString("\n").run { markdownToHTML(this) }
     )
 
-    changeNotes(
-      closure {
+    changeNotes.set(
+      provider {
         markdownToHTML(File("${project.projectDir}/docs/RELEASE-NOTES.md").readText())
       }
     )
   }
 
   runPluginVerifier {
-    setFailureLevel(FailureLevel.COMPATIBILITY_PROBLEMS)
-    ideVersions(pluginVerifierIdeVersions)
+    failureLevel.set(listOf(FailureLevel.COMPATIBILITY_PROBLEMS))
+    ideVersions.set(
+      pluginVerifierIdeVersions.split(',')
+        .map(String::trim)
+        .filter(String::isNotEmpty)
+    )
   }
 
   publishPlugin {
-    token(System.getenv("PUBLISH_TOKEN"))
+    token.set(System.getenv("PUBLISH_TOKEN"))
     // pluginVersion is based on the SemVer (https://semver.org) and supports pre-release labels, like 2.1.7-alpha.3
     // Specify pre-release label to publish the plugin in a custom Release Channel automatically. Read more:
     // https://jetbrains.org/intellij/sdk/docs/tutorials/build_system/deployment.html#specifying-a-release-channel
-    channels(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first())
+    channels.set(listOf(pluginVersion.split('-').getOrElse(1) { "default" }.split('.').first()))
   }
 }

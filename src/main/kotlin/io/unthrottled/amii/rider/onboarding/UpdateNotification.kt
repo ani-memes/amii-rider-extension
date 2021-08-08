@@ -57,7 +57,6 @@ object UpdateNotification {
           "https://doki.assets.unthrottled.io/misc/update_celebration.gif"
         }
       ),
-      NotificationType.INFORMATION
     )
       .setIcon(PLUGIN_ICON)
       .setListener(NotificationListener.UrlOpeningListener(false))

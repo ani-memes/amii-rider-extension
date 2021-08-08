@@ -23,7 +23,7 @@ private fun buildUpdateMessage(updateAsset: String): String =
   """
       What's New?<br>
       <ul>
-        <li>Fixed MIKU not reacting to test the first time you ever run them.</li>
+        <li>2021.2 Build Support!</li>
       </ul>
       <br>See the <a href="https://github.com/ani-memes/amii-rider-extension#documentation">documentation</a> for features, usages, and configurations.
       <br>The <a href="https://github.com/ani-memes/amii-rider-extension/blob/master/CHANGELOG.md">changelog</a> is available for more details.

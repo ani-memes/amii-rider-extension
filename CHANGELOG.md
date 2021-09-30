@@ -2,6 +2,12 @@
 
 # AMII Rider Extensions Changelog
 
+## [0.4.0]
+
+## Added
+
+- 2021.3 Rider Build Support.
+
 ## [0.3.0]
 
 ## Added

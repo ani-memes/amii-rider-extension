@@ -15,6 +15,8 @@
   <extensions defaultExtensionNs="com.intellij">
     <applicationService serviceImplementation="io.unthrottled.amii.rider.config.Config"/>
     <applicationService serviceImplementation="io.unthrottled.amii.rider.PluginMaster"/>
+    <notificationGroup displayType="BALLOON" id="AMII - Rider Extension Updates"
+                       icon="AMIIRiderIcons.PLUGIN_ICON" isLogByDefault="false" toolWindowId="AMII - Rider Extension Updates" />
   </extensions>
 
   <project-components>

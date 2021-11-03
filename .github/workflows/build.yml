@@ -26,7 +26,7 @@ jobs:
     steps:
 
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
 
       - name: Gradle Wrapper Validation
         uses: gradle/wrapper-validation-action@v1.0.4
@@ -45,7 +45,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
 
       - name: Setup Gradle Dependencies Cache
         uses: actions/cache@v2.1.6
@@ -84,7 +84,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
 
       - name: Setup Gradle Dependencies Cache
         uses: actions/cache@v2.1.6
@@ -136,7 +136,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Fetch Sources
-        uses: actions/checkout@v2.3.5
+        uses: actions/checkout@v2.4.0
 
       - name: Setup Gradle Dependencies Cache
         uses: actions/cache@v2.1.6

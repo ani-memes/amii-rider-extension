@@ -69,7 +69,7 @@ intellij {
   updateSinceUntilBuild.set(true)
 
   // Plugin Dependencies. Uses `platformPlugins` property from the gradle.properties file.
-  plugins.set(listOf("io.unthrottled.amii:0.10.6"))
+  plugins.set(listOf("io.unthrottled.amii:0.14.1"))
 }
 
 // Configure detekt plugin.

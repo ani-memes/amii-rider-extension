@@ -23,7 +23,7 @@ class RiderTestListener(
 
   init {
     model.sessions.advise(projectComponentLifetime) {
-      val sessionKey = it.key
+      val sessionKey = it.key.toString()
       runningTests[sessionKey] = false
       val state = it.newValueOpt?.state
       state?.advise(projectComponentLifetime) { sessionState ->

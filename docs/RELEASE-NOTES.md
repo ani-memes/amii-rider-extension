@@ -1,3 +1,7 @@
 ## Added
 
-- 2021.3 Rider Build Support.
+- 2022.1 Build Support
+
+## Removed
+
+- 2020.3 Build Support

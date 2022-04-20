@@ -8,7 +8,7 @@
 
 - 2022.1 Build Support
 
-### Removed
+## Removed
 
 - 2020.3 Build Support
 

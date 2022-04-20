@@ -3,7 +3,7 @@
   <name>Anime Memes - Rider Extension</name>
   <vendor>Unthrottled</vendor>
 
-  <idea-version since-build="203.5981.141"/>
+  <idea-version since-build="211.6693.111"/>
 
   <!-- Product and plugin compatibility requirements -->
   <!-- https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html -->
@@ -16,7 +16,7 @@
     <applicationService serviceImplementation="io.unthrottled.amii.rider.config.Config"/>
     <applicationService serviceImplementation="io.unthrottled.amii.rider.PluginMaster"/>
     <notificationGroup displayType="BALLOON" id="AMII - Rider Extension Updates"
-                       icon="AMIIRiderIcons.PLUGIN_ICON" isLogByDefault="false" toolWindowId="AMII - Rider Extension Updates" />
+                       isLogByDefault="false" toolWindowId="AMII - Rider Extension Updates" />
   </extensions>
 
   <project-components>

@@ -11,11 +11,20 @@ import io.unthrottled.amii.events.UserEventCategory
 import io.unthrottled.amii.events.UserEvents
 import io.unthrottled.amii.tools.PluginMessageBundle
 import io.unthrottled.amii.tools.toOptional
+import java.util.Locale
 import java.util.concurrent.ConcurrentHashMap
 
 class RiderTestListener(
   project: Project
 ) : ProtocolSubscribedProjectComponent(project) {
+
+  companion object {
+    val nonCompletionEvents = setOf(
+      "building",
+      "none",
+      "exploring tests"
+    )
+  }
 
   private val model = project.solution.rdUnitTestHost
 
@@ -36,8 +45,15 @@ class RiderTestListener(
           ) && runningTests[sessionKey] != true
         ) {
           runningTests[sessionKey] = true
-        } else if (runningTests[sessionKey] == true) {
-          if (sessionState.completedCount == sessionState.totalCount) {
+        } else if (runningTests[sessionKey] == true &&
+          // Lots of events get emitted before the tests run that
+          // hang on to the previous results, causing a lot of noise
+          // when running the tests.
+          !nonCompletionEvents.contains(sessionStateMessage.lowercase(Locale.getDefault()))
+        ) {
+          if (sessionState.completedCount == sessionState.totalCount &&
+            sessionState.completedCount > 0
+          ) {
             when (sessionState.status) {
               RdUnitTestStatus.Success -> PluginMessageBundle.message("user.event.test.pass.name") to
                 UserEventCategory.POSITIVE

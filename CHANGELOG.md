@@ -2,6 +2,12 @@
 
 # AMII Rider Extensions Changelog
 
+## [0.5.1]
+
+## Fixed
+
+- MIKU being very noisy when running tests. Now they only react when the test complete.
+
 ## [0.5.0]
 
 ## Added

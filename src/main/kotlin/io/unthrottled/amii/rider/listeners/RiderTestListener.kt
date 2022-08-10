@@ -52,7 +52,7 @@ class RiderTestListener(
           !nonCompletionEvents.contains(sessionStateMessage.lowercase(Locale.getDefault()))
         ) {
           if (sessionState.completedCount == sessionState.totalCount &&
-            sessionState.completedCount > 0
+            sessionState.completedCount > 0 && sessionState.isPending.not()
           ) {
             when (sessionState.status) {
               RdUnitTestStatus.Success -> PluginMessageBundle.message("user.event.test.pass.name") to

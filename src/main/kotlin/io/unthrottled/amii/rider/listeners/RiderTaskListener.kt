@@ -25,7 +25,8 @@ class RiderTaskListener(
 
   private var previousTaskStatus = TaskStatus.UNKNOWN
   private val errors = setOf(
-    BuildResultKind.HasErrors, BuildResultKind.Crashed,
+    BuildResultKind.HasErrors,
+    BuildResultKind.Crashed,
   )
 
   init {

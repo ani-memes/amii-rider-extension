@@ -46,12 +46,12 @@ object UpdateNotification {
     val updateNotification = notificationGroup.createNotification(
       buildUpdateMessage(
         VisualAssetDefinitionService.getRandomAssetByCategory(
-          MemeAssetCategory.HAPPY,
+          MemeAssetCategory.HAPPY
         ).map { it.filePath.toString() }.orElseGet {
           "https://doki.assets.unthrottled.io/misc/update_celebration.gif"
         }
       ),
-      NotificationType.INFORMATION,
+      NotificationType.INFORMATION
     )
       .setTitle("$PLUGIN_NAME updated to v$newVersion")
       .setIcon(PLUGIN_ICON)
@@ -83,7 +83,7 @@ object UpdateNotification {
   ) {
     notificationGroup.createNotification(
       content,
-      NotificationType.INFORMATION,
+      NotificationType.INFORMATION
     )
       .setTitle(title)
       .setListener(listener ?: defaultListener)

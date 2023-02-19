@@ -3,7 +3,7 @@ package io.unthrottled.amii.rider.config
 import java.net.URI
 
 data class ConfigSettingsModel(
-  val foo: String = "aoeu",
+  val foo: String = "aoeu"
 )
 
 object PluginSettings {

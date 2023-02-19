@@ -26,7 +26,7 @@ class RiderTaskListener(
   private var previousTaskStatus = TaskStatus.UNKNOWN
   private val errors = setOf(
     BuildResultKind.HasErrors,
-    BuildResultKind.Crashed,
+    BuildResultKind.Crashed
   )
 
   init {
@@ -46,7 +46,7 @@ class RiderTaskListener(
                   UserEventCategory.NEGATIVE,
                   PluginMessageBundle.message("user.event.task.failure.name"),
                   project
-                ),
+                )
               )
           }
           previousTaskStatus == TaskStatus.FAIL &&
@@ -59,7 +59,7 @@ class RiderTaskListener(
                   UserEventCategory.POSITIVE,
                   PluginMessageBundle.message("user.event.task.success.name"),
                   project
-                ),
+                )
               )
           }
         }

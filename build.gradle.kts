@@ -43,7 +43,7 @@ repositories {
   mavenLocal()
 }
 dependencies {
-  detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.22.0")
+  detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.23.0")
   implementation("commons-io:commons-io:2.11.0")
   implementation("com.googlecode.soundlibs:mp3spi:1.9.5.4")
   implementation("io.sentry:sentry:6.18.1")
